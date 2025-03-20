@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3> <%= title %> </h3>
+    <h4> today's date <%= currentDate %> </h4>
+  
+    <%- include('navbar', {page: "update"}); -%>
+
+    <form method="POST" action="/update">
+
+        <input type="text" name="fname" value="<%= data.firstname %>" placeholder="Enter your firstname" /> <br/>
+        <input type="text" name="lname" value="<%= data.lastname %>" placeholder="Enter your lastname" /> <br/>
+        <input type="email" name="email" value="<%= data.email %>" placeholder="Enter your email" /> <br/>
+        <input type="tel" name="phone" value="<%= data.phone %>" placeholder="Enter your mobile number" /> <br/>
+        <input type="submit"  />
+        
+
+    </form>
+</body>
+</html>

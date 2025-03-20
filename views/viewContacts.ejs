@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title%> </title>
+</head>
+<body>
+    
+    <h2> Todays date <%= currentDate %> </h2>
+
+    <%- include('navbar', {page: "view"}); -%>
+
+
+    <ul>
+    <% data.forEach(function(user){ %>
+        <li> <%= user.firstname + " " + user.lastname %>  -
+            <a href="/delete/<%= user.firstname %>"> Delete contact</a>
+            <a href="/update/<%= user.firstname %>"> Update contact</a>
+           </li>
+      <% }); %>
+    </ul>
+</body>
+</html>
